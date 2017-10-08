@@ -8,7 +8,6 @@
       </div>
     </div>
   </form>
-  
 </template>
 
 <script>

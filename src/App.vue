@@ -3,20 +3,15 @@
     <app-header :quoteCount="quotes.length" :maxQuotes="maxQuotes"></app-header>
     <app-new-quote @quoteAdded="newQuote"></app-new-quote>
     <app-quote-grid :quotes="quotes" @quoteDeleted="deleteQuote"></app-quote-grid>
-    <div class="grid-x grid-margin-x">
-      <div class="cell">
-        <div class="callout primary">
-          <p class="text-center">Note: You can click on the quote anytime to delete it.</p>
-        </div>
-      </div>
-    </div>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
+import AppHeader from './components/AppHeader.vue';
 import AppQuoteGrid from './components/AppQuoteGrid.vue';
 import AppNewQuote from './components/AppNewQuote.vue';
-import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
   data() {
@@ -39,7 +34,7 @@ export default {
       this.quotes.splice(index, 1)
     }
   },
-  components: { AppQuoteGrid, AppNewQuote, AppHeader }
+  components: { AppHeader, AppQuoteGrid, AppNewQuote, AppFooter }
 }
 </script>
 
